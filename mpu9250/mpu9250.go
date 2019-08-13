@@ -55,13 +55,13 @@ type MPU9250 struct {
 NewMPU9250 creates a new MPU9250 object according to the supplied parameters.  If there is no MPU9250 available or there
 is an error creating the object, an error is returned.
 */
-func NewMPU9250(sensitivityGyro, sensitivityAccel, sampleRate int, enableMag bool, applyHWOffsets bool) (*MPU9250, error) {
+func NewMPU9250(i2cbus *embd.I2CBus, sensitivityGyro, sensitivityAccel, sampleRate int, enableMag bool, applyHWOffsets bool) (*MPU9250, error) {
 	var mpu = new(MPU9250)
 
 	mpu.sampleRate = sampleRate
 	mpu.enableMag = enableMag
 
-	mpu.i2cbus = embd.NewI2CBus(1)
+	mpu.i2cbus = i2cbus
 
 	// Check if the chip is the ICM-20948. Assume it is the MPU-9250, if not.
 	if v, err := mpu.i2cRead(ICMREG_WHO_AM_I); err != nil {
