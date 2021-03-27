@@ -1,12 +1,13 @@
 package main
 
 import (
-	"../../bmp280"
 	"fmt"
-	"github.com/kidoman/embd"
 	"log"
 	"math"
 	"testing"
+
+	"github.com/b3nn0/goflying/bmp280"
+	"github.com/kidoman/embd"
 )
 
 func TestBMP280Math(t *testing.T) {
@@ -154,7 +155,7 @@ func TestBMP280Setup(t *testing.T) {
 	i2cbus := embd.NewI2CBus(1)
 	bmp, err = bmp280.NewBMP280(&i2cbus, bmp280.Address1, mode, standbyTime, filterCoeff, oversampTemp, oversampPress)
 	if err != nil {
-		bmp, err = bmp280.NewBMP280(i2cbus, bmp280.Address2, mode, standbyTime, filterCoeff, oversampTemp, oversampPress)
+		bmp, err = bmp280.NewBMP280(&i2cbus, bmp280.Address2, mode, standbyTime, filterCoeff, oversampTemp, oversampPress)
 	}
 	if err != nil {
 		log.Println("Couldn't find a BMP280")

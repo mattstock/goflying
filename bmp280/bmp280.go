@@ -7,12 +7,13 @@ package bmp280
 
 import (
 	"fmt"
-	"github.com/kidoman/embd"
-	_ "github.com/kidoman/embd/host/all"
-	_ "github.com/kidoman/embd/host/rpi"
 	"log"
 	"math"
 	"time"
+
+	"github.com/kidoman/embd"
+	_ "github.com/kidoman/embd/host/all"
+	_ "github.com/kidoman/embd/host/rpi"
 )
 
 const (

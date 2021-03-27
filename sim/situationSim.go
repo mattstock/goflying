@@ -1,7 +1,7 @@
 package main
 
 import (
-	"../ahrs"
+	"github.com/b3nn0/goflying/ahrs"
 	"errors"
 	"github.com/skelterjohn/go.matrix"
 	"math"

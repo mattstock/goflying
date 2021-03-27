@@ -13,7 +13,7 @@ import (
 	"os"
 	"time"
 
-	"../../ahrsweb"
+	"github.com/b3nn0/goflying/ahrsweb"
 	"fmt"
 	"github.com/gorilla/websocket"
 	"net/url"

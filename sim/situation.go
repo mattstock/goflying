@@ -1,6 +1,6 @@
 package main
 
-import "../ahrs"
+import "github.com/b3nn0/goflying/ahrs"
 
 type Situation interface {
 	BeginTime() float64

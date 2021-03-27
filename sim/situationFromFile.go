@@ -9,7 +9,7 @@ import (
 	"os"
 	"strconv"
 
-	"../ahrs"
+	"github.com/b3nn0/goflying/ahrs"
 	"github.com/skelterjohn/go.matrix"
 )
 
