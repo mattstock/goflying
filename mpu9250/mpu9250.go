@@ -808,7 +808,7 @@ func (mpu *MPU9250) i2cRead2(register byte) (value int16, err error) {
 
 	v, errWrite := mpu.i2cbus.ReadWordFromReg(MPU_ADDRESS, register)
 	if errWrite != nil {
-		err = fmt.Errorf("MPU9250 Error reading %x: %s\n", register, err.Error())
+		err = fmt.Errorf("MPU9250 Error reading %x: %s\n", register, errWrite.Error())
 	} else {
 		value = int16(v)
 	}
